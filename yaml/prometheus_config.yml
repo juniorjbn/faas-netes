@@ -4,7 +4,7 @@ metadata:
   labels:
     app: prometheus
   name: prometheus-config
-  namespace: openfaas
+  namespace: openfaas-test
 data:
   prometheus.yml: |
     # my global config
@@ -33,7 +33,7 @@ data:
       - job_name: "gateway"
         scrape_interval: 5s
         dns_sd_configs:
-          - names: ['gateway.openfaas']
+          - names: ['gateway.openfaas-test']
             port: 8080
             type: A
             refresh_interval: 5s
